@@ -60,7 +60,7 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      publicPath: process.env.NODE_ENV === 'production' ? '/team13-23.github.io/' : '/',
+      publicPath: process.env.NODE_ENV === 'production' ? '/Toxipred/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
