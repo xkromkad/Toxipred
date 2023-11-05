@@ -1,49 +1,34 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="mainPage">
+    <home-component class="component" id="domov" />
+    <project-component class="component" id="projekt" />
+    <team-component class="component" id="tim" />
+    <doc-component class="component" id="dokumentacia" />
   </q-page>
 </template>
 
 <script lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+import HomeComponent from 'components/HomeComponent.vue';
+import ProjectComponent from 'components/ProjectComponent.vue';
+import TeamComponent from 'components/TeamComponent.vue';
+import DocComponent from 'components/DocComponent.vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
-  setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
-    });
-    return { todos, meta };
-  }
+  components: { HomeComponent, ProjectComponent, TeamComponent, DocComponent },
 });
 </script>
+
+<style>
+.component {
+  min-height: 80vh;
+}
+.text-body1 {
+  font-size: 1.5rem;
+}
+.mainPage {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+</style>

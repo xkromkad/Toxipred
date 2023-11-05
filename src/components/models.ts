@@ -1,8 +1,7 @@
-export interface Todo {
+export interface Tab {
   id: number;
-  content: string;
-}
-
-export interface Meta {
-  totalCount: number;
+  tab: string;
+  caption: string;
+  link: string;
+  icon: string;
 }

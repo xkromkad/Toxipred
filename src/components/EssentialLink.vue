@@ -1,20 +1,19 @@
 <template>
   <q-item
     clickable
+    :style="{
+      backgroundColor: currentTab === tab ? 'rgb(201, 163, 57)' : '',
+    }"
     tag="a"
     target="_blank"
-    :href="link"
+    @click="setTab(tab)"
   >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
+    <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" />
     </q-item-section>
 
     <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>{{ caption }}</q-item-label>
+      <q-item-label>{{ caption }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
@@ -25,25 +24,38 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'EssentialLink',
   props: {
-    title: {
-      type: String,
-      required: true
+    id: {
+      type: Number,
+      required: true,
     },
 
     caption: {
       type: String,
-      default: ''
+      required: true,
+    },
+
+    tab: {
+      type: String,
+      required: true,
     },
 
     link: {
       type: String,
-      default: '#'
+      default: '#',
     },
 
     icon: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+    setTab: {
+      type: Function,
+      required: true,
+    },
+    currentTab: {
+      type: String,
+      required: true,
+    },
+  },
 });
 </script>
