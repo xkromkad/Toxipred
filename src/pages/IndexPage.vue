@@ -22,7 +22,7 @@ export default defineComponent({
 
 <style>
 .component {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 .text-body1 {
   font-size: 1.5rem;

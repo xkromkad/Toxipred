@@ -58,7 +58,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue';
+import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
 import { useMenuStore } from 'src/stores/menuStore';
 import EssentialLink from 'components/EssentialLink.vue';
 
@@ -78,20 +78,16 @@ export default defineComponent({
       const isValidTab = tabs.some((tab) => tab.tab === tabValue);
       const newTabValue = isValidTab ? tabValue : 'domov';
 
-      tab.value = newTabValue;
-      const newUrl = `/#${newTabValue}`;
-      window.history.replaceState({}, '', newUrl);
-
-      if (tab.value) {
+      if (newTabValue) {
         const { nextTick } = await import('vue');
         await nextTick();
-        scrollToElement();
+        scrollToElement(newTabValue);
       }
     };
 
-    const scrollToElement = () => {
-      const tabValue = tab.value;
+    const scrollToElement = (tabValue: string) => {
       if (tabValue === 'domov') {
+        tab.value = 'domov';
         window.scrollTo({
           top: 0,
           behavior: 'smooth',
@@ -112,20 +108,51 @@ export default defineComponent({
       }
     };
 
+    function handleScroll() {
+      const sections = ['domov', 'projekt', 'tim', 'dokumentacia'];
+
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section == null) {
+          continue;
+        }
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 200 && rect.bottom >= 200) {
+          // Check if the middle of the section is visible in the viewport
+          var currentPath = window.location.pathname;
+          if (currentPath == '/') {
+            currentPath = '';
+          }
+          tab.value = sectionId;
+          const newUrl = `${currentPath}/#${sectionId}`;
+          window.history.replaceState({}, '', newUrl);
+
+          //window.location.hash = sectionId;
+          // Change the hash in the URL to the id of the visible section
+          break;
+        }
+      }
+    }
+
     onMounted(() => {
       const tabValue = window.location.hash.slice(1); // Extract tabValue from URL
       setTab(tabValue); // Set the tabValue in your component's state
-      // window.addEventListener('resize', updateImageSources);
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
     });
 
     return {
       tabs,
       rightDrawerOpen,
+      tab,
+      setTab,
       toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value;
       },
-      tab,
-      setTab,
     };
   },
 });
