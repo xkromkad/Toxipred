@@ -5,3 +5,10 @@ export interface Tab {
   link: string;
   icon: string;
 }
+
+export interface Member {
+  id: number;
+  name: string;
+  info: string;
+  image: string;
+}

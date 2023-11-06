@@ -33,5 +33,6 @@ export default defineComponent({
     rgba(49, 76, 232, 1) 63%,
     rgba(15, 72, 195, 1) 100%
   );
+  min-height: 100%;
 }
 </style>

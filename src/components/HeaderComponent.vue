@@ -1,11 +1,11 @@
 <template>
   <q-header class="header" id="header">
     <q-toolbar>
-      <q-toolbar-title shrink class="title non-selectable">
+      <q-toolbar-title shrink class="title non-selectable q-py-sm">
         TP
       </q-toolbar-title>
       <q-space />
-      <div v-if="$q.screen.gt.sm">
+      <div v-if="$q.screen.gt.sm" class="q-py-sm">
         <q-btn
           class="q-mx-md btn"
           flat
@@ -160,6 +160,7 @@ export default defineComponent({
   font-family: 'Bai Jamjuree', sans-serif;
   letter-spacing: 2px;
   font-size: 40px;
+  overflow: visible;
 }
 .header {
   background: rgb(23, 179, 227);
