@@ -121,15 +121,12 @@ export default defineComponent({
         if (rect.top <= 200 && rect.bottom >= 200) {
           // Check if the middle of the section is visible in the viewport
           var currentPath = window.location.pathname;
-          if (currentPath == '/') {
-            currentPath = '';
+          if (currentPath.endsWith('/')) {
+            currentPath = currentPath.slice(0, -1);
           }
           tab.value = sectionId;
           const newUrl = `${currentPath}/#${sectionId}`;
           window.history.replaceState({}, '', newUrl);
-
-          //window.location.hash = sectionId;
-          // Change the hash in the URL to the id of the visible section
           break;
         }
       }
