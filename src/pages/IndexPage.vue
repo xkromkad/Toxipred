@@ -31,4 +31,13 @@ export default defineComponent({
   max-width: 1200px;
   margin: 0 auto;
 }
+.text {
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+.title2 {
+  font-family: 'Bai Jamjuree', sans-serif;
+  letter-spacing: 2px;
+  font-size: calc(35px + 2vw);
+  overflow: visible;
+}
 </style>

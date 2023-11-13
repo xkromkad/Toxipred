@@ -1,6 +1,6 @@
 <template>
   <div class="q-mx-lg">
-    <h2 class="title non-selectable text-white">Tím</h2>
+    <h2 class="title2 non-selectable text-white">Tím</h2>
     <q-item-label class="text-white member-label" header
       >Členovia nášho tímu</q-item-label
     >

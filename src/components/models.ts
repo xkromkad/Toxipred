@@ -12,3 +12,10 @@ export interface Member {
   info: string;
   image: string;
 }
+
+export interface Notation {
+  date: Date;
+  title: string;
+  note: string;
+  docPath: string;
+}
