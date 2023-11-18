@@ -130,7 +130,7 @@
 import { defineComponent, ref } from 'vue';
 import { useNotationStore } from 'src/stores/notationStore';
 import figma from 'src/assets/icons/figma.svg';
-import github from 'src/assets/icons/figma.svg';
+import github from 'src/assets/icons/github.svg';
 import zadanie from 'src/assets/docs/Zadanie.pdf';
 
 export default defineComponent({
