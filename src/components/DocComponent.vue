@@ -26,7 +26,7 @@
         v-for="notation in tab == 'semester1' ? notations1 : notations2"
         :key="notation.date.toDateString()"
         v-ripple
-        @click="window.open('/docs/' + notation.docPath, '_blank')"
+        @click="window.open(notation.docPath, '_blank')"
         class="col-sm-6 col-xs-12 text-center cursor-pointer q-hoverable q-pa-md"
       >
         <div class="notation-item q-pa-sm">
@@ -65,7 +65,7 @@
             target="_blank"
           >
             <q-item-section avatar>
-              <q-icon color="white" name="img:/icons/github.svg" />
+              <q-icon color="white" :name="'img:' + github" />
             </q-item-section>
             <q-item-section>
               <q-item-label class="text-body1">Projekt</q-item-label>
@@ -81,7 +81,7 @@
             target="_blank"
           >
             <q-item-section avatar>
-              <q-icon color="white" name="img:/icons/github.svg" />
+              <q-icon color="white" :name="'img:' + github" />
             </q-item-section>
             <q-item-section>
               <q-item-label class="text-body1">Stránka tímu</q-item-label>
@@ -90,12 +90,7 @@
               >
             </q-item-section>
           </q-item>
-          <q-item
-            clickable
-            v-ripple
-            href="/docs/Zadanie.pdf"
-            target="_blank"
-          >
+          <q-item clickable v-ripple :href="zadanie" target="_blank">
             <q-item-section avatar>
               <q-icon color="white" name="task" />
             </q-item-section>
@@ -113,7 +108,7 @@
             target="_blank"
           >
             <q-item-section avatar>
-              <q-icon color="white" name="img:/icons/figma.svg" />
+              <q-icon color="white" :name="'img:' + figma" />
             </q-item-section>
             <q-item-section>
               <q-item-label class="text-body1"
@@ -134,6 +129,9 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { useNotationStore } from 'src/stores/notationStore';
+import figma from 'src/assets/icons/figma.svg';
+import github from 'src/assets/icons/figma.svg';
+import zadanie from 'src/assets/docs/Zadanie.pdf';
 
 export default defineComponent({
   name: 'DocComponent',
@@ -141,7 +139,15 @@ export default defineComponent({
     const notationStore = useNotationStore();
     const notations1 = notationStore.notations1;
     const notations2 = notationStore.notations2;
-    return { tab: ref('semester1'), notations1, notations2, window };
+    return {
+      tab: ref('semester1'),
+      notations1,
+      notations2,
+      window,
+      figma,
+      github,
+      zadanie,
+    };
   },
 });
 </script>

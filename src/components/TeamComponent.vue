@@ -36,6 +36,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { useMembersStore } from 'src/stores/membersStore';
+
 export default defineComponent({
   name: 'TeamComponent',
   setup() {
