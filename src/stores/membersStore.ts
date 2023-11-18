@@ -9,7 +9,7 @@ export const useMembersStore = defineStore('members', {
           id: 1,
           name: 'Filip Cák',
           info: 'Data analysis',
-          image: 'src/assets/team/filip.jpeg',
+          image: '/team/filip.jpeg',
         },
         {
           id: 2,
@@ -27,7 +27,7 @@ export const useMembersStore = defineStore('members', {
           id: 4,
           name: 'Dávid Kromka',
           info: 'Web development',
-          image: 'src/assets/team/david.jpg',
+          image: '/team/david.jpg',
         },
         {
           id: 5,
