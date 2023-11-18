@@ -162,15 +162,7 @@ export default defineComponent({
   font-size: 40px;
   overflow: visible;
 }
-.header {
-  background: rgb(23, 179, 227);
-  background: linear-gradient(
-    90deg,
-    rgba(23, 179, 227, 1) 0%,
-    rgba(49, 76, 232, 1) 63%,
-    rgba(15, 72, 195, 1) 100%
-  );
-}
+
 .btn {
   font-family: 'Bai Jamjuree', sans-serif;
 }

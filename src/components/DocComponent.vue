@@ -1,7 +1,7 @@
 <template>
   <div class="q-mx-lg">
     <h2 class="title2 non-selectable text-white">Dokumentácia</h2>
-    <div class="row">
+    <div class="row justify-center">
       <div class="col-12">
         <h3 class="text-center text-h3 text-white text non-selectable">
           Zápisnice
@@ -14,38 +14,33 @@
         </q-tabs>
       </div>
       <div
-        v-for="(notation, index) in tab == 'semester1'
-          ? notations1
-          : notations2"
-        :key="notation.date.toDateString()"
-        :class="
-          (index % 2 == 0 ? 'justify-start' : 'justify-end') +
-          ' row fit q-mb-md'
+        v-if="
+          (tab == 'semester1' && notations1.length == 0) ||
+          (tab == 'semester2' && notations2.length == 0)
         "
+        class="text-body1 text-white"
       >
-        <!--<q-separator
-          class="q-mx-md"
-          v-if="index % 2 == 1"
-          vertical
-          inset
-          color="white"
-          size="3px"
-        />-->
-        <div
-          v-ripple
-          class="col-sm-6 col-xs-12 text-center notation-item cursor-pointer q-hoverable q-pa-md"
-        >
+        Žiadne záznamy
+      </div>
+      <div
+        v-for="notation in tab == 'semester1' ? notations1 : notations2"
+        :key="notation.date.toDateString()"
+        v-ripple
+        @click="window.open('src/assets/docs/' + notation.docPath, '_blank')"
+        class="col-sm-6 col-xs-12 text-center cursor-pointer q-hoverable q-pa-md"
+      >
+        <div class="notation-item q-pa-sm">
           <div class="row text-center">
             <div class="fit">
-              <a href="" class="text-h4 text-white text">{{
-                notation.title
-              }}</a>
               <q-icon
                 name="description"
                 size="md"
                 color="white"
-                class="q-mb-md q-ml-sm"
+                class="q-mb-md q-mr-sm"
               />
+              <a href="" class="text-h4 text-white text">{{
+                notation.title
+              }}</a>
             </div>
           </div>
           <p class="text-body2 text-white q-mb-md">
@@ -55,6 +50,82 @@
             {{ notation.note }}
           </p>
         </div>
+      </div>
+      <div class="col-12">
+        <h3 class="text-center text-h3 text-white text non-selectable">
+          Dôležité odkazy
+        </h3>
+      </div>
+      <div class="col-sm-6 col-xs-12 q-ma-md">
+        <q-list dark separator>
+          <q-item
+            clickable
+            v-ripple
+            href="https://github.com/matejmosnar/tp_toxipred"
+            target="_blank"
+          >
+            <q-item-section avatar>
+              <q-icon color="white" name="img:src/assets/icons/github.svg" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-body1">Projekt</q-item-label>
+              <q-item-label caption
+                >Github repozitár pre trénovacie dáta a modely AI</q-item-label
+              >
+            </q-item-section>
+          </q-item>
+          <q-item
+            clickable
+            v-ripple
+            href="https://github.com/xkromkad/Toxipred"
+            target="_blank"
+          >
+            <q-item-section avatar>
+              <q-icon color="white" name="img:src/assets/icons/github.svg" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-body1">Stránka tímu</q-item-label>
+              <q-item-label caption
+                >Github repozitár webovej stránky nášho tímu</q-item-label
+              >
+            </q-item-section>
+          </q-item>
+          <q-item
+            clickable
+            v-ripple
+            href="src/assets/docs/Zadanie.pdf"
+            target="_blank"
+          >
+            <q-item-section avatar>
+              <q-icon color="white" name="task" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-body1">Zadanie projektu</q-item-label>
+              <q-item-label caption
+                >Zadanie témy projektu s opisom</q-item-label
+              >
+            </q-item-section>
+          </q-item>
+          <q-item
+            clickable
+            v-ripple
+            href="https://www.figma.com/file/4Dzkmaojw2rLczE2crKvSu/TP_13-team-library?type=design&node-id=0%3A1&mode=design&t=uF0ZIe17CnrHKEp3-1"
+            target="_blank"
+          >
+            <q-item-section avatar>
+              <q-icon color="white" name="img:src/assets/icons/figma.svg" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-body1"
+                >Návrh stránky tímového projektu</q-item-label
+              >
+              <q-item-label caption
+                >Návrh používateľského rozhrania webovej stránky tímu v nástroji
+                Figma</q-item-label
+              >
+            </q-item-section>
+          </q-item>
+        </q-list>
       </div>
     </div>
   </div>
@@ -70,7 +141,7 @@ export default defineComponent({
     const notationStore = useNotationStore();
     const notations1 = notationStore.notations1;
     const notations2 = notationStore.notations2;
-    return { tab: ref('semester1'), notations1, notations2 };
+    return { tab: ref('semester1'), notations1, notations2, window };
   },
 });
 </script>
