@@ -3,9 +3,10 @@
     <h2 class="title2 non-selectable text-white">Tím</h2>
     <div class="row">
       <div class="col-12">
-        <h3 class="text-center text-h3 text-white text non-selectable">
+        <h3 class="text-center text-h3 text-white text non-selectable q-mb-sm">
           Členovia nášho tímu
         </h3>
+        <div class="text-center text-body1 text-white q-mb-lg">Tím číslo 13</div>
       </div>
       <q-item
         v-for="member in members"
@@ -23,12 +24,26 @@
             class="text-weight-bold text-white name text-center non-selectable"
             >{{ member.name }}</q-item-label
           >
-          <q-item-label
-            class="info text-white text-center non-selectable"
-            >{{ member.info }}</q-item-label
-          >
+          <q-item-label class="info text-white text-center non-selectable">{{
+            member.info
+          }}</q-item-label>
         </q-item-section>
       </q-item>
+      <div class="col-12">
+        <h3 class="text-center text-h3 text-white text non-selectable">
+          Kontakt
+        </h3>
+      </div>
+      <div class="row fit justify-center">
+        <div class="col-sm-6 col-12 ">
+          <q-item
+            clickable
+            href="mailto:team13tp2023@googlegroups.com"
+            class="text-body1 text-white justify-center items-center mail"
+            >team13tp2023@googlegroups.com</q-item
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -55,5 +70,6 @@ export default defineComponent({
 .info {
   font-size: 20px;
 }
+
 
 </style>
