@@ -6,12 +6,12 @@
     </q-page-container>
     <q-footer class="footer">
       <q-toolbar>
-        <q-toolbar-title>Tím 13</q-toolbar-title>
+        <q-item class="text-body2 items-center">Tím 13</q-item>
         <q-space />
         <q-item
           clickable
           href="mailto:team13tp2023@googlegroups.com"
-          class="text-body2"
+          class="text-body2 items-center mail"
           >team13tp2023@googlegroups.com</q-item
         >
       </q-toolbar>
@@ -51,5 +51,9 @@ export default defineComponent({
 
 .page {
   min-height: 100%;
+}
+
+.mail {
+  text-decoration: underline;
 }
 </style>
