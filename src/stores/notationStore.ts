@@ -28,7 +28,7 @@ export const useNotationStore = defineStore('notation', {
           docPath: zapisnica3,
         },
         {
-          date: new Date('2023-11-25'),
+          date: new Date('2023-11-15'),
           title: '4. zápisnica',
           note: 'V skratke opis zápisnice.',
           docPath: zapisnica4,

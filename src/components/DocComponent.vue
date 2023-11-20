@@ -1,9 +1,9 @@
 <template>
   <div class="q-mx-lg">
-    <h2 class="title2 non-selectable text-white">Dokumentácia</h2>
+    <h2 class="title2 non-selectable text-white q-mb-md">Dokumentácia</h2>
     <div class="row justify-center">
       <div class="col-12">
-        <h3 class="text-center text-h3 text-white text non-selectable">
+        <h3 class="text-center text-h3 text-white text non-selectable q-mb-md">
           Zápisnice
         </h3>
       </div>
@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="col-12">
-        <h3 class="text-center text-h3 text-white text non-selectable">
+        <h3 class="text-center text-h3 text-white text non-selectable q-mb-md">
           Dôležité odkazy
         </h3>
       </div>
@@ -120,6 +120,17 @@
               >
             </q-item-section>
           </q-item>
+          <q-item clickable v-ripple :href="motivacny_list" target="_blank">
+            <q-item-section avatar>
+              <q-icon color="white" name="description" />
+            </q-item-section>
+            <q-item-section>
+              <q-item-label class="text-body1">Motivačný list</q-item-label>
+              <q-item-label caption
+                >Motivačný list k vybraným témam pre tímový projekt</q-item-label
+              >
+            </q-item-section>
+          </q-item>
         </q-list>
       </div>
     </div>
@@ -132,6 +143,7 @@ import { useNotationStore } from 'src/stores/notationStore';
 import figma from 'src/assets/icons/figma.svg';
 import github from 'src/assets/icons/github.svg';
 import zadanie from 'src/assets/docs/Zadanie.pdf';
+import motivacny_list from 'src/assets/docs/motivacny_list.pdf'
 
 export default defineComponent({
   name: 'DocComponent',
@@ -147,6 +159,7 @@ export default defineComponent({
       figma,
       github,
       zadanie,
+      motivacny_list,
     };
   },
 });

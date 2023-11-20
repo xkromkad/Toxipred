@@ -40,4 +40,10 @@ export default defineComponent({
   font-size: calc(35px + 2vw);
   overflow: visible;
 }
+
+.text-h3 {
+  letter-spacing: 2px;
+  font-size: calc(25px + 2vw);
+  overflow: visible;
+}
 </style>

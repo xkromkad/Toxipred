@@ -53,7 +53,7 @@ export default defineComponent({
   min-height: 100%;
 }
 
-.mail {
+.mail, .link {
   text-decoration: underline;
 }
 </style>
