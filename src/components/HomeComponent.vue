@@ -1,15 +1,15 @@
 <template>
   <div class="q-mx-lg">
-    <h1
-      class="row justify-center text-h1 title non-selectable"
-    >
-      ToxiPred
-    </h1>
-    <p
-      class="row text-center justify-center text-body1 text-uppercase text-white non-selectable"
-    >
-      Predikčný model na odhaľovanie toxicity látok
-    </p>
+    <div class="row justify-center items-center" style="height: 80vh;">
+      <div class="col-12">
+        <h1 class="text-h1 text-center title non-selectable">ToxiPred</h1>
+        <p
+          class="text-body1 text-center text-uppercase text-white non-selectable"
+        >
+          Predikčný model na odhaľovanie toxicity látok
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -26,8 +26,6 @@ export default defineComponent({
   font-family: 'Bai Jamjuree', sans-serif;
   letter-spacing: 2px;
   color: white;
-  font-size:calc(50px + 8vw);
+  font-size: calc(50px + 8vw);
 }
-
-
 </style>
