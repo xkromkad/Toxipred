@@ -1,9 +1,14 @@
 <template>
   <q-header class="header" id="header">
     <q-toolbar>
-      <q-toolbar-title shrink class="title non-selectable q-py-sm">
-        TP
-      </q-toolbar-title>
+      <div class="title-photo-container">
+        <q-toolbar-title shrink class="title non-selectable q-py-sm">
+          TP
+        </q-toolbar-title>
+
+        <!-- Add an image after the toolbar title -->
+        <img src="src/assets/icons/stu_fiit_logo.png" alt="fiit_logo" class="header-photo" />
+      </div>
       <q-space />
       <div v-if="$q.screen.gt.sm" class="q-py-sm">
         <q-btn
@@ -172,5 +177,19 @@ export default defineComponent({
     rgba(49, 76, 232, 1) 63%,
     rgba(15, 72, 195, 1) 100%
   );
+}
+
+/* Additional style for the container to hold the title and photo */
+.title-photo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Additional style for the image */
+.header-photo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px; /* Adjust margin if needed */
+
 }
 </style>
