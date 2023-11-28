@@ -1,16 +1,14 @@
 <template>
   <q-header class="header" id="header">
     <q-toolbar>
-      <div class="title-photo-container">
-        <q-toolbar-title shrink class="title non-selectable q-py-sm">
+      <div style="width: 100px" class="q-mr-sm">
+        <q-toolbar-title shrink class="title non-selectable">
           TP
         </q-toolbar-title>
-
-        <!-- Add an image after the toolbar title -->
-        <img src="src/assets/icons/stu_fiit_logo.png" alt="fiit_logo" class="header-photo" />
       </div>
+
       <q-space />
-      <div v-if="$q.screen.gt.sm" class="q-py-sm">
+      <div v-if="$q.screen.gt.sm" class="q-py-xs">
         <q-btn
           class="q-mx-md btn"
           flat
@@ -26,6 +24,7 @@
         />
       </div>
       <q-space />
+      <img :src="fiitLogo" alt="fiit_logo" class="header-photo q-mr-sm" />
       <q-btn
         v-if="$q.screen.lt.md"
         flat
@@ -66,6 +65,7 @@
 import { defineComponent, onMounted, onUnmounted, ref } from 'vue';
 import { useMenuStore } from 'src/stores/menuStore';
 import EssentialLink from 'components/EssentialLink.vue';
+import fiitLogo from 'src/assets/icons/stu_fiit_logo.svg';
 
 export default defineComponent({
   name: 'HeaderComponent',
@@ -151,6 +151,7 @@ export default defineComponent({
       tabs,
       rightDrawerOpen,
       tab,
+      fiitLogo,
       setTab,
       toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value;
@@ -179,17 +180,9 @@ export default defineComponent({
   );
 }
 
-/* Additional style for the container to hold the title and photo */
-.title-photo-container {
-  display: flex;
-  align-items: center;
-}
-
 /* Additional style for the image */
 .header-photo {
   width: 100px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  margin-left: 10px; /* Adjust margin if needed */
-
 }
 </style>

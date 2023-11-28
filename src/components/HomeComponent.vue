@@ -26,6 +26,6 @@ export default defineComponent({
   font-family: 'Bai Jamjuree', sans-serif;
   letter-spacing: 2px;
   color: white;
-  font-size: calc(50px + 8vw);
+  font-size: calc(35px + 8.4vw);
 }
 </style>

@@ -42,7 +42,7 @@
             clickable
             href="mailto:team13tp2023@googlegroups.com"
             class="text-body1 text-white justify-center items-center mail"
-            style="overflow-wrap: anywhere;"
+            style="overflow-wrap: anywhere"
             >team13tp2023@googlegroups.com</q-item
           >
         </div>
@@ -56,17 +56,17 @@
     </div>
     <div class="row fit justify-center">
       <div class="col-sm-8 col-xs-12">
-        <div class="text-body1 text-center text-white">
+        <div class="text-body1  text-white">
           Sme tím siedmich študentov pokračujúcich v našom štúdiu na FIIT po
           úspešnom ukončení bakalárskeho štúdia. Máme skúsenosti so spracovaním
           a analýzov dát a ich prípravou na tvorbu modelov strojového učenia. V
           rámci školských projektov sme si vyskúšali rôzne úlohy, ako
-          klasifikácia, regresia či klastrovanie. Medzi naše skúsenosti zo
-          školských projektov, bakalárskej práce a zamestnania patrí analýza,
-          návrh, implementácia a nasadenie webových a desktopových aplikácií.
-          Ako tím sme schopní navrhnúť a implementovať kvalitné používateľské
-          rozhranie, ktoré zabezpečuje optimálnu použiteľnosť, efektívnosť a
-          uspokojenie používateľských požiadaviek.
+          klasifikácia, regresia či klastrovanie.
+          <br /> <br/>Medzi naše skúsenosti zo školských projektov, bakalárskej práce
+          a zamestnania patrí analýza, návrh, implementácia a nasadenie webových
+          a desktopových aplikácií. Ako tím sme schopní navrhnúť a implementovať
+          kvalitné používateľské rozhranie, ktoré zabezpečuje optimálnu
+          použiteľnosť, efektívnosť a uspokojenie používateľských požiadaviek.
         </div>
       </div>
     </div>
