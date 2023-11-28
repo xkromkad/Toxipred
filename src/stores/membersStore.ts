@@ -5,8 +5,8 @@ import filip from 'src/assets/team/filip.jpeg';
 import grejty from 'src/assets/team/grejty.png';
 import pato from 'src/assets/team/pato.jpg';
 import matej from 'src/assets/team/matej.jpg';
-import adam from 'src/assets/team/adam.png'
-
+import adam from 'src/assets/team/adam.png';
+import emma from 'src/assets/team/emma.jpg';
 
 export const useMembersStore = defineStore('members', {
   state: (): { members: Member[] } => {
@@ -40,8 +40,7 @@ export const useMembersStore = defineStore('members', {
           id: 5,
           name: 'Emma Macháčová',
           info: 'Scrum master',
-          image:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/1200px-Icon-round-Question_mark.svg.png',
+          image: emma,
         },
         {
           id: 5,
