@@ -59,7 +59,7 @@
         <div class="text-body1  text-white">
           Sme tím siedmich študentov pokračujúcich v našom štúdiu na FIIT po
           úspešnom ukončení bakalárskeho štúdia. Máme skúsenosti so spracovaním
-          a analýzov dát a ich prípravou na tvorbu modelov strojového učenia. V
+          a analýzou dát a ich prípravou na tvorbu modelov strojového učenia. V
           rámci školských projektov sme si vyskúšali rôzne úlohy, ako
           klasifikácia, regresia či klastrovanie.
           <br /> <br/>Medzi naše skúsenosti zo školských projektov, bakalárskej práce

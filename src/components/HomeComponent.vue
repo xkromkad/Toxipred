@@ -6,7 +6,7 @@
         <p
           class="text-body1 text-center text-uppercase text-white non-selectable"
         >
-          Predikčný model na odhaľovanie toxicity látok
+          Predikčný model na odhaľovanie genotoxicity látok
         </p>
       </div>
     </div>

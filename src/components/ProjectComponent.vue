@@ -11,7 +11,7 @@
         <div class="text-body1 text-white text-center">
           Cieľom projektu je vytvorenie digitálneho dvojčaťa k in vivo a in
           vitro experimentom. Pomocou metód strojového učenia vytvoriť predikčný
-          model na odhalenie toxicity nových látok.
+          model na odhalenie genotoxicity nových látok.
         </div>
       </div>
       <div class="col-12">
