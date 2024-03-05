@@ -53,6 +53,30 @@
       </div>
       <div class="col-12">
         <h3 class="text-center text-h3 text-white text non-selectable q-mb-md">
+          Šprinty
+        </h3>
+      </div>
+      <div
+        v-ripple
+        @click="window.open('src/assets/docs/sprinty.pdf', '_blank')"
+        class="col-sm-6 col-xs-12 text-center cursor-pointer q-hoverable q-pa-md"
+      >
+        <div class="notation-item q-pa-sm">
+          <div class="row text-center">
+            <div class="fit">
+              <q-icon
+                name="description"
+                size="md"
+                color="white"
+                class="q-mb-md q-mr-sm"
+              />
+              <a href="" class="text-h4 text-white text">1. semester</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <h3 class="text-center text-h3 text-white text non-selectable q-mb-md">
           Dôležité odkazy
         </h3>
       </div>
