@@ -58,7 +58,7 @@
       </div>
       <div
         v-ripple
-        @click="window.open('src/assets/docs/sprinty.pdf', '_blank')"
+        @click="window.open(sprinty, '_blank')"
         class="col-sm-6 col-xs-12 text-center cursor-pointer q-hoverable q-pa-md"
       >
         <div class="notation-item q-pa-sm">
@@ -168,6 +168,7 @@ import figma from 'src/assets/icons/figma.svg';
 import github from 'src/assets/icons/github.svg';
 import zadanie from 'src/assets/docs/Zadanie.pdf';
 import motivacny_list from 'src/assets/docs/motivacny_list.pdf'
+import sprinty from 'src/assets/docs/sprinty.pdf'
 
 export default defineComponent({
   name: 'DocComponent',
@@ -184,6 +185,7 @@ export default defineComponent({
       github,
       zadanie,
       motivacny_list,
+      sprinty,
     };
   },
 });
